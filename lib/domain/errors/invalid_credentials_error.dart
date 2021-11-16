@@ -1,0 +1,1 @@
+class InvalidCredentialsError implements Exception {}

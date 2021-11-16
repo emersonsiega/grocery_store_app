@@ -12,6 +12,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   localstorage: ^4.0.0+1
   mockito: ^5.0.16
+  equatable: ^2.0.3
+  uuid: ^3.0.5
 
 dev_dependencies:
   flutter_test:
