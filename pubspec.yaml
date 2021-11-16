@@ -10,12 +10,16 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  localstorage: ^4.0.0+1
+  mockito: ^5.0.16
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+  build_runner:
+  faker: ^2.0.0
   flutter_lints: ^1.0.0
+  test:
 
 flutter:
   uses-material-design: true
