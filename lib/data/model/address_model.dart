@@ -1,6 +1,7 @@
 import 'package:equatable/equatable.dart';
-import 'package:grocery_store_app/domain/domain.dart';
 import 'package:json_annotation/json_annotation.dart';
+
+import '../../domain/domain.dart';
 
 part 'address_model.g.dart';
 

@@ -1,4 +1,4 @@
-import 'package:grocery_store_app/domain/domain.dart';
+import '../domain.dart';
 
 class AddressEntity extends BaseEntity {
   final String title;
