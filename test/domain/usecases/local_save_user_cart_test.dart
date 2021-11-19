@@ -39,16 +39,43 @@ void main() {
 
     verify(cacheStorageSpy.save(key: 'user_cart_${cart.user.id}', value: {
       'id': cart.id,
-      'userId': cart.user.id,
+      'user': {
+        'id': cart.user.id,
+        'cpf': cart.user.cpf,
+        'name': cart.user.name,
+        'address': {
+          'id': cart.user.mainAddress.id,
+          'city': cart.user.mainAddress.city,
+          'number': cart.user.mainAddress.number,
+          'country': cart.user.mainAddress.country,
+          'state': cart.user.mainAddress.state,
+          'street': cart.user.mainAddress.street,
+          'title': cart.user.mainAddress.title,
+          'zipCode': cart.user.mainAddress.zipCode,
+          'additionalInfo': cart.user.mainAddress.additionalInfo,
+        },
+      },
       'items': [
         {
           'id': cart.items[0].id,
-          'productId': cart.items[0].product.id,
+          'product': {
+            'id': cart.items[0].product.id,
+            'imagePath': cart.items[0].product.imagePath,
+            'name': cart.items[0].product.name,
+            'unitType': cart.items[0].product.unitType.name,
+            'price': cart.items[0].product.price,
+          },
           'quantity': cart.items[0].quantity,
         },
         {
           'id': cart.items[1].id,
-          'productId': cart.items[1].product.id,
+          'product': {
+            'id': cart.items[1].product.id,
+            'imagePath': cart.items[1].product.imagePath,
+            'name': cart.items[1].product.name,
+            'unitType': cart.items[1].product.unitType.name,
+            'price': cart.items[1].product.price,
+          },
           'quantity': cart.items[1].quantity,
         }
       ],

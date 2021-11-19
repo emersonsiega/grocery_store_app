@@ -48,4 +48,14 @@ class ProductModel extends Equatable {
       price: price,
     );
   }
+
+  factory ProductModel.fromEntity(ProductEntity entity) {
+    return ProductModel(
+      id: entity.id,
+      imagePath: entity.imagePath,
+      name: entity.name,
+      price: entity.price,
+      unitType: entity.unitType.name,
+    );
+  }
 }

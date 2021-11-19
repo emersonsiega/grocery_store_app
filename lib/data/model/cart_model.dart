@@ -9,25 +9,33 @@ part 'cart_model.g.dart';
 @JsonSerializable(explicitToJson: true)
 class CartModel extends Equatable {
   final String id;
-  final String userId;
+  final UserModel user;
   final List<CartItemModel> items;
 
   const CartModel({
     required this.id,
-    required this.userId,
+    required this.user,
     required this.items,
   });
 
   factory CartModel.fromEntity(CartEntity entity) {
     return CartModel(
       id: entity.id,
-      userId: entity.user.id,
+      user: UserModel.fromEntity(entity.user),
       items: entity.items.map((e) => CartItemModel.fromEntity(e)).toList(),
     );
   }
 
+  CartEntity toEntity() {
+    return CartEntity(
+      id: id,
+      user: user.toEntity(),
+      items: items.map((e) => e.toEntity()).toList(),
+    );
+  }
+
   @override
-  List<Object?> get props => [id, userId, items];
+  List<Object?> get props => [id, user, items];
 
   factory CartModel.fromJson(Map<String, dynamic> json) =>
       _$CartModelFromJson(json);
