@@ -24,7 +24,9 @@ class CubitLoginPresenter extends Cubit<LoginState> implements LoginPresenter {
       emit(const LoginState(isLoading: true));
 
       final entity = await userAuthentication.authenticate(
-          username: user, password: password);
+        username: user,
+        password: password,
+      );
 
       await saveUserAccount.save(entity);
 

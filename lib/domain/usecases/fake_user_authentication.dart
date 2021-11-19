@@ -6,7 +6,7 @@ class FakeUserAuthentication implements UserAuthentication {
     required String username,
     required String password,
   }) async {
-    if (username.isEmpty || password.isEmpty) {
+    if (username.length < 2 || password.length < 2) {
       throw InvalidCredentialsError();
     }
 
