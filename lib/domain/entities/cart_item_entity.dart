@@ -2,7 +2,6 @@ import '../domain.dart';
 
 class CartItemEntity extends BaseEntity {
   final ProductEntity product;
-
   final double quantity;
 
   CartItemEntity({

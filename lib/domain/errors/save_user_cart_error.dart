@@ -1,0 +1,1 @@
+class SaveUserCartError implements Exception {}
