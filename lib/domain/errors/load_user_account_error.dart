@@ -1,0 +1,1 @@
+class LoadUserAccountError implements Exception {}

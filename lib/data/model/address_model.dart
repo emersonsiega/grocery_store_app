@@ -43,6 +43,20 @@ class AddressModel extends Equatable {
     );
   }
 
+  AddressEntity toEntity() {
+    return AddressEntity(
+      id: id,
+      title: title,
+      street: street,
+      number: number,
+      city: city,
+      state: state,
+      country: country,
+      zipCode: zipCode,
+      additionalInfo: additionalInfo,
+    );
+  }
+
   @override
   List<Object?> get props => [
         id,

@@ -1,6 +1,5 @@
-import '../../data/cache/cache.dart';
 import '../../data/data.dart';
-import '../../infra/logger/logger.dart';
+import '../../infra/infra.dart';
 import '../domain.dart';
 
 class LocalSaveUserCart implements SaveUserCart {

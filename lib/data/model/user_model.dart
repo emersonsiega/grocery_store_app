@@ -6,7 +6,7 @@ import 'address_model.dart';
 
 part 'user_model.g.dart';
 
-@JsonSerializable()
+@JsonSerializable(explicitToJson: true)
 class UserModel extends Equatable {
   final String id;
   final String name;
@@ -26,6 +26,15 @@ class UserModel extends Equatable {
       name: entity.name,
       cpf: entity.cpf,
       address: AddressModel.fromEntity(entity.mainAddress),
+    );
+  }
+
+  UserEntity toEntity() {
+    return UserEntity(
+      id: id,
+      name: name,
+      cpf: cpf,
+      mainAddress: address.toEntity(),
     );
   }
 
