@@ -1,0 +1,1 @@
+class CartItemAlreadyExistsError implements Exception {}

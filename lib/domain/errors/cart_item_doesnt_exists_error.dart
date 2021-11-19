@@ -1,0 +1,1 @@
+class CartItemDoesntExistsError implements Exception {}
