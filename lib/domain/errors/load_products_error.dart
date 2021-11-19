@@ -1,0 +1,1 @@
+class LoadProductsError implements Exception {}

@@ -12,7 +12,7 @@ import 'package:auto_route/src/route/page_route_info.dart' as _i8;
 import 'package:auto_route/src/router/auto_route_page.dart' as _i5;
 import 'package:auto_route/src/router/controller/pageless_routes_observer.dart'
     as _i3;
-import 'package:flutter/material.dart' as _i2;
+import 'package:flutter/widgets.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: avoid_redundant_argument_values

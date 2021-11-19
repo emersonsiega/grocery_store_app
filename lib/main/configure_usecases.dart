@@ -10,4 +10,8 @@ void injectUseCases() {
   GetIt.I.registerLazySingleton<SaveUserAccount>(
     () => LocalSaveUserAccount(cacheStorage: GetIt.I.get()),
   );
+
+  GetIt.I.registerLazySingleton<LoadProducts>(
+    () => LocalLoadProducts(cacheStorage: GetIt.I.get()),
+  );
 }
