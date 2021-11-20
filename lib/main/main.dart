@@ -1,11 +1,14 @@
-import 'configure_usecases.dart';
+import 'configure_data.dart';
 import 'configure_infra.dart';
 import 'configure_presenters.dart';
+import 'configure_usecases.dart';
 
-void configureApp() {
-  injectInfra();
+Future<void> configureApp() async {
+  await injectInfra();
 
   injectUseCases();
 
   injectPresenters();
+
+  await createProductsList();
 }

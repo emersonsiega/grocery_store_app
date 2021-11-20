@@ -18,7 +18,7 @@ class LocalLoadProducts implements LoadProducts {
 
       return entities;
     } catch (error, trace) {
-      Log.e("Load products  error", data: error, trace: trace);
+      Log.e("Load products error", data: error, trace: trace);
       throw LoadProductsError();
     }
   }
