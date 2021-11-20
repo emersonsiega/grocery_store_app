@@ -16,6 +16,8 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: unnecessary_parenthesis
 // ignore_for_file: camel_case_types
 
+class _FakeLoginState_0 extends _i1.Fake implements _i2.LoginState {}
+
 /// A class which mocks [LoginPresenter].
 ///
 /// See the documentation for Mockito's code generation for more information.
@@ -29,6 +31,9 @@ class MockLoginPresenter extends _i1.Mock implements _i2.LoginPresenter {
       (super.noSuchMethod(Invocation.getter(#stream),
               returnValue: Stream<_i2.LoginState>.empty())
           as _i3.Stream<_i2.LoginState>);
+  @override
+  _i2.LoginState get state => (super.noSuchMethod(Invocation.getter(#state),
+      returnValue: _FakeLoginState_0()) as _i2.LoginState);
   @override
   _i3.Future<void> authenticate({String? user, String? password}) =>
       (super.noSuchMethod(

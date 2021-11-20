@@ -18,4 +18,11 @@ void injectPresenters() {
       userAuthentication: GetIt.I.get(),
     ),
   );
+
+  GetIt.I.registerLazySingleton<HomePresenter>(
+    () => CubitHomePresenter(
+      appPresenter: GetIt.I.get(),
+      saveUserCart: GetIt.I.get(),
+    ),
+  );
 }
