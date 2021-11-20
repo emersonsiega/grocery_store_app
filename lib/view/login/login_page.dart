@@ -43,7 +43,7 @@ class _LoginPageState extends State<LoginPage> {
     );
 
     if (state.completed) {
-      AutoRouter.of(context).replace(const HomeRoute());
+      AutoRouter.of(context).replace(const AppRoute());
     }
   }
 

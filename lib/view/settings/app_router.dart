@@ -10,7 +10,14 @@ part 'app_router.gr.dart';
   preferRelativeImports: true,
   routes: <AutoRoute>[
     AutoRoute(page: LoginPage, initial: true),
-    AutoRoute(page: HomePage),
+    AutoRoute(
+      page: AppPage,
+      children: [
+        AutoRoute(page: HomePage, initial: true),
+        AutoRoute(page: CartPage),
+        AutoRoute(page: UserAccountPage),
+      ],
+    ),
   ],
 )
 class AppRouter extends _$AppRouter {}
