@@ -60,6 +60,13 @@ void main() {
     expect(response, user);
   });
 
+  test('Should return null if cache is null', () async {
+    mockCacheSuccess(null);
+    final response = await sut.load();
+
+    expect(response, isNull);
+  });
+
   test('Should throw a LoadUserAccountError if load fails', () async {
     mockCacheError();
 
