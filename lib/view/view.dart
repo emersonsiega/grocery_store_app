@@ -1,4 +1,6 @@
 export 'app.dart';
+export 'app/app.dart';
+export 'components/components.dart';
 export 'home/home.dart';
 export 'login/login.dart';
 export 'settings/settings.dart';
