@@ -7,4 +7,5 @@ abstract class AppColors {
   static const Color text = Color(0xff505050);
   static const Color background = Color(0xffffffff);
   static const Color error = Color(0xfffc5d71);
+  static const Color disabled = Color(0xffc4c4c4);
 }

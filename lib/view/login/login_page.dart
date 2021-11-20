@@ -84,9 +84,9 @@ class _LoginPageState extends State<LoginPage> {
               ),
               Text(
                 "Grocery Store",
-                style: Theme.of(context).primaryTextTheme.headline3?.copyWith(
-                      color: Theme.of(context).colorScheme.secondary,
-                    ),
+                style: context.theme.primaryTextTheme.headline3?.copyWith(
+                  color: context.colorScheme.secondary,
+                ),
               ),
             ],
           ),
@@ -133,11 +133,16 @@ class _LoginPageState extends State<LoginPage> {
                       SizedBox(height: 40.height),
                       Text(
                         "Não possui conta?",
-                        style: Theme.of(context).textTheme.bodyText1,
+                        style: context.textTheme.bodyText1,
                       ),
                       TextButton(
                         onPressed: _createAccount,
-                        child: const Text("Criar conta"),
+                        child: Text(
+                          "Criar conta",
+                          style: context.textTheme.button?.copyWith(
+                            color: context.colorScheme.primary,
+                          ),
+                        ),
                       ),
                     ],
                   ),

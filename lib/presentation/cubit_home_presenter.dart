@@ -28,7 +28,8 @@ class CubitHomePresenter extends Cubit<HomeState> implements HomePresenter {
           items: [cartItem],
         );
       } else {
-        cart.addItem(cartItem);
+        final items = cart.addItem(cartItem);
+        cart = cart.copyWith(items: items);
       }
 
       await saveUserCart.save(cart);
@@ -53,9 +54,12 @@ class CubitHomePresenter extends Cubit<HomeState> implements HomePresenter {
           (item) => item.product.id == productEntity.id,
         );
 
-        cart.removeItem(item);
-        await saveUserCart.save(cart);
-        appPresenter.updateCart(cart);
+        final newCart = cart.copyWith(
+          items: cart.removeItem(item),
+        );
+
+        await saveUserCart.save(newCart);
+        appPresenter.updateCart(newCart);
       }
 
       emit(const HomeState(successMessage: "Produto removido"));

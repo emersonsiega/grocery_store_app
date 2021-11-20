@@ -1,5 +1,10 @@
+import 'package:copy_with_extension/copy_with_extension.dart';
+
 import '../domain.dart';
 
+part 'cart_entity.g.dart';
+
+@CopyWith()
 class CartEntity extends BaseEntity {
   final UserEntity user;
   final List<CartItemEntity> items;
@@ -25,6 +30,13 @@ class CartEntity extends BaseEntity {
     );
   }
 
+  bool containsProduct(ProductEntity product) {
+    final existentItem =
+        items.where((cartItem) => cartItem.product.id == product.id);
+
+    return existentItem.isNotEmpty;
+  }
+
   bool _containsItem(CartItemEntity item) {
     final existentItem = items.where((cartItem) => cartItem.id == item.id);
 
@@ -35,12 +47,12 @@ class CartEntity extends BaseEntity {
     return items.indexWhere((cartItem) => cartItem.id == item.id);
   }
 
-  void addItem(CartItemEntity item) {
+  List<CartItemEntity>? addItem(CartItemEntity item) {
     if (_containsItem(item)) {
       throw CartItemAlreadyExistsError();
     }
 
-    items.add(item);
+    return [...items, item];
   }
 
   void editItem(CartItemEntity item) {
@@ -52,12 +64,13 @@ class CartEntity extends BaseEntity {
     items.replaceRange(currentIndex, currentIndex + 1, [item]);
   }
 
-  void removeItem(CartItemEntity item) {
+  List<CartItemEntity>? removeItem(CartItemEntity item) {
     if (!_containsItem(item)) {
       throw CartItemDoesntExistsError();
     }
 
-    items.remove(item);
+    final list = items.where((element) => element.id != item.id).toList();
+    return list;
   }
 
   @override

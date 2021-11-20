@@ -12,7 +12,7 @@ class LocalSaveUserAccount implements SaveUserAccount {
   Future<void> save(UserEntity entity) async {
     try {
       final json = UserModel.fromEntity(entity).toJson();
-      cacheStorage.save(key: _userAccountKey, value: json);
+      await cacheStorage.save(key: _userAccountKey, value: json);
     } catch (error, trace) {
       Log.e("Save user account error", data: error, trace: trace);
       throw SaveUserAccountError();

@@ -57,8 +57,6 @@ class CubitAppPresenter extends Cubit<AppState> implements AppPresenter {
 
   @override
   void updateCart(CartEntity cart) {
-    emit(
-      state.copyWith(cart: cart),
-    );
+    emit(state.copyWith(cart: cart));
   }
 }

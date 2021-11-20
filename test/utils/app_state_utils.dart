@@ -29,15 +29,16 @@ AppState makeAppStateWithEmptyCart() {
 
 AppState makeAppStateWithCart() {
   final user = makeUserEntity();
+  final products = _stateProducts;
 
   return AppState(
     currentUser: user,
-    products: _stateProducts,
+    products: products,
     cart: CartEntity(
       id: user.id,
       user: user,
       items: [
-        makeCartItem(product: _stateProducts.first),
+        makeCartItem(product: products.first),
       ],
     ),
   );

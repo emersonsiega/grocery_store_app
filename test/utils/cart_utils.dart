@@ -6,7 +6,7 @@ ProductEntity makeProduct(
   ProductUnitType type = ProductUnitType.unit,
 }) {
   return ProductEntity(
-    imagePath: faker.internet.httpUrl(),
+    imagePath: 'assets/images/products/apple.png',
     name: faker.lorem.word(),
     unitType: type,
     price: price,

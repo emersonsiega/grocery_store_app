@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_ui_layout/responsive_ui_layout.dart';
 
+import '../view.dart';
+
 abstract class CustomSnackbar {
   // Default settings
   static const _behavior = SnackBarBehavior.floating;
@@ -43,7 +45,7 @@ abstract class CustomSnackbar {
     required BuildContext context,
   }) {
     return SnackBar(
-      backgroundColor: Theme.of(context).colorScheme.primaryVariant,
+      backgroundColor: context.colorScheme.primaryVariant,
       behavior: _behavior,
       dismissDirection: _dismiss,
       shape: _shape,
@@ -51,9 +53,9 @@ abstract class CustomSnackbar {
       padding: _padding,
       content: Text(
         message,
-        style: Theme.of(context).textTheme.subtitle1?.copyWith(
-              color: Theme.of(context).colorScheme.background,
-            ),
+        style: context.textTheme.subtitle1?.copyWith(
+          color: context.colorScheme.background,
+        ),
       ),
     );
   }
@@ -63,7 +65,7 @@ abstract class CustomSnackbar {
     required BuildContext context,
   }) {
     return SnackBar(
-      backgroundColor: Theme.of(context).colorScheme.error,
+      backgroundColor: context.colorScheme.error,
       behavior: _behavior,
       dismissDirection: _dismiss,
       shape: _shape,
@@ -71,9 +73,9 @@ abstract class CustomSnackbar {
       padding: _padding,
       content: Text(
         message,
-        style: Theme.of(context).textTheme.subtitle1?.copyWith(
-              color: Theme.of(context).colorScheme.background,
-            ),
+        style: context.textTheme.subtitle1?.copyWith(
+          color: context.colorScheme.background,
+        ),
       ),
     );
   }

@@ -27,8 +27,8 @@ void main() {
     );
     expect(sut.totalItems, 0);
 
-    sut.addItem(makeCartItem());
-    expect(sut.totalItems, 1);
+    final newItems = sut.addItem(makeCartItem());
+    expect(newItems!.length, 1);
   });
 
   test('Should add a new item', () async {
@@ -39,9 +39,9 @@ void main() {
 
     expect(sut.totalItems, 4);
 
-    sut.addItem(makeCartItem());
+    final newItems = sut.addItem(makeCartItem());
 
-    expect(sut.totalItems, 5);
+    expect(newItems!.length, 5);
   });
 
   test('Should throw a CartItemAlreadyExistsError if add the same item twice',
@@ -54,10 +54,12 @@ void main() {
 
     final item = makeCartItem();
 
-    sut.addItem(item);
+    final newItems = sut.addItem(item);
+
+    final newSut = sut.copyWith(items: newItems);
 
     expect(
-      () => sut.addItem(item),
+      () => newSut.addItem(item),
       throwsA(const TypeMatcher<CartItemAlreadyExistsError>()),
     );
   });
@@ -113,10 +115,9 @@ void main() {
       items: [item],
     );
 
-    sut.removeItem(item);
+    final newItems = sut.removeItem(item);
 
-    expect(sut.totalItems, 0);
-    expect(sut.total, 0.0);
+    expect(newItems!.length, 0);
   });
 
   test('Should throw a CartItemDoesntExistsError if remove an inexistent item',

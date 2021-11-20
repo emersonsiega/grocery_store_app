@@ -1,9 +1,28 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+
 import '../view.dart';
 
-class AppPage extends StatelessWidget {
+class AppPage extends StatefulWidget {
   const AppPage({Key? key}) : super(key: key);
+
+  @override
+  State<AppPage> createState() => _AppPageState();
+}
+
+class _AppPageState extends State<AppPage> {
+  late AppPresenter presenter;
+
+  @override
+  void initState() {
+    super.initState();
+
+    presenter = GetIt.I.get();
+
+    WidgetsBinding.instance
+        ?.addPostFrameCallback((_) => presenter.loadAppState());
+  }
 
   @override
   Widget build(BuildContext context) {

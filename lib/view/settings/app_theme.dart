@@ -24,12 +24,44 @@ abstract class AppTheme {
         primaryColor: AppColors.primary,
         backgroundColor: AppColors.background,
         canvasColor: AppColors.background,
+        dividerColor: AppColors.disabled,
         inputDecorationTheme: InputDecorationTheme(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
           ),
+          hintStyle: GoogleFonts.inter(
+            color: AppColors.disabled,
+            fontSize: 16.fontSize,
+            fontWeight: FontWeight.normal,
+          ),
         ),
-        textTheme: GoogleFonts.interTextTheme(),
+        textTheme: GoogleFonts.interTextTheme().copyWith(
+          headline6: GoogleFonts.inter(
+            color: AppColors.text,
+            fontSize: 20.fontSize,
+            fontWeight: FontWeight.w500,
+          ),
+          bodyText1: GoogleFonts.inter(
+            color: AppColors.text,
+            fontSize: 14.fontSize,
+            fontWeight: FontWeight.w500,
+          ),
+          bodyText2: GoogleFonts.inter(
+            color: AppColors.text,
+            fontSize: 12.fontSize,
+            fontWeight: FontWeight.w500,
+          ),
+          subtitle1: GoogleFonts.inter(
+            color: AppColors.text,
+            fontSize: 14.fontSize,
+            fontWeight: FontWeight.w500,
+          ),
+          button: GoogleFonts.inter(
+            color: AppColors.text,
+            fontSize: 14.fontSize,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
         primaryTextTheme: GoogleFonts.dancingScriptTextTheme(),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ButtonStyle(
@@ -38,4 +70,12 @@ abstract class AppTheme {
           ),
         ),
       );
+}
+
+extension ThemeContextExtension on BuildContext {
+  ThemeData get theme => Theme.of(this);
+
+  TextTheme get textTheme => Theme.of(this).textTheme;
+
+  ColorScheme get colorScheme => Theme.of(this).colorScheme;
 }
