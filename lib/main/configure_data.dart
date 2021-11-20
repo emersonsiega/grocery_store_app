@@ -16,35 +16,35 @@ Future<void> createProductsList() async {
 List<Map<String, dynamic>> get _products => [
       {
         "id": const Uuid().v4(),
-        "imagePath": "assets/images/products/apple.svg",
+        "imagePath": "assets/images/products/apple.png",
         "name": "Maçã",
         "unitType": "kg",
         "price": 3.95
       },
       {
         "id": const Uuid().v4(),
-        "imagePath": "assets/images/products/banana.svg",
+        "imagePath": "assets/images/products/banana.png",
         "name": "Banana",
         "unitType": "kg",
         "price": 4.80
       },
       {
         "id": const Uuid().v4(),
-        "imagePath": "assets/images/products/mango.svg",
+        "imagePath": "assets/images/products/mango.png",
         "name": "Manga",
         "unitType": "kg",
         "price": 2.90
       },
       {
         "id": const Uuid().v4(),
-        "imagePath": "assets/images/products/peach.svg",
+        "imagePath": "assets/images/products/peach.png",
         "name": "Pêra",
         "unitType": "kg",
         "price": 5.00
       },
       {
         "id": const Uuid().v4(),
-        "imagePath": "assets/images/products/pineapple.svg",
+        "imagePath": "assets/images/products/pineapple.png",
         "name": "Abacaxi",
         "unitType": "unit",
         "price": 3.50
