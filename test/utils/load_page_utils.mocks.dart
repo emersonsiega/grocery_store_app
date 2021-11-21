@@ -6,13 +6,13 @@ import 'dart:async' as _i7;
 import 'dart:ui' as _i10;
 
 import 'package:auto_route/auto_route.dart' as _i6;
-import 'package:auto_route/src/matcher/route_matcher.dart' as _i4;
+import 'package:auto_route/src/matcher/route_matcher.dart' as _i5;
 import 'package:auto_route/src/navigation_failure.dart' as _i9;
 import 'package:auto_route/src/route/page_route_info.dart' as _i8;
-import 'package:auto_route/src/router/auto_route_page.dart' as _i5;
 import 'package:auto_route/src/router/controller/pageless_routes_observer.dart'
     as _i3;
-import 'package:flutter/widgets.dart' as _i2;
+import 'package:flutter/foundation.dart' as _i2;
+import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: avoid_redundant_argument_values
@@ -29,15 +29,15 @@ class _FakeLocalKey_0 extends _i1.Fake implements _i2.LocalKey {}
 class _FakePagelessRoutesObserver_1 extends _i1.Fake
     implements _i3.PagelessRoutesObserver {}
 
-class _FakeGlobalKey_2<T extends _i2.State<_i2.StatefulWidget>> extends _i1.Fake
-    implements _i2.GlobalKey<T> {}
+class _FakeGlobalKey_2<T extends _i4.State<_i4.StatefulWidget>> extends _i1.Fake
+    implements _i4.GlobalKey<T> {}
 
-class _FakeRouteCollection_3 extends _i1.Fake implements _i4.RouteCollection {}
+class _FakeRouteCollection_3 extends _i1.Fake implements _i5.RouteCollection {}
 
-class _FakeAutoRoutePage_4<T> extends _i1.Fake implements _i5.AutoRoutePage<T> {
+class _FakeAutoRoutePage_4<T> extends _i1.Fake implements _i6.AutoRoutePage<T> {
 }
 
-class _FakeRouteMatcher_5 extends _i1.Fake implements _i4.RouteMatcher {}
+class _FakeRouteMatcher_5 extends _i1.Fake implements _i5.RouteMatcher {}
 
 class _FakeRouteData_6 extends _i1.Fake implements _i6.RouteData {}
 
@@ -72,23 +72,23 @@ class MockStackRouter extends _i1.Mock implements _i6.StackRouter {
       (super.noSuchMethod(Invocation.getter(#stateHash), returnValue: 0)
           as int);
   @override
-  _i2.GlobalKey<_i2.NavigatorState> get navigatorKey =>
+  _i4.GlobalKey<_i4.NavigatorState> get navigatorKey =>
       (super.noSuchMethod(Invocation.getter(#navigatorKey),
-              returnValue: _FakeGlobalKey_2<_i2.NavigatorState>())
-          as _i2.GlobalKey<_i2.NavigatorState>);
+              returnValue: _FakeGlobalKey_2<_i4.NavigatorState>())
+          as _i4.GlobalKey<_i4.NavigatorState>);
   @override
-  _i4.RouteCollection get routeCollection =>
+  _i5.RouteCollection get routeCollection =>
       (super.noSuchMethod(Invocation.getter(#routeCollection),
-          returnValue: _FakeRouteCollection_3()) as _i4.RouteCollection);
+          returnValue: _FakeRouteCollection_3()) as _i5.RouteCollection);
   @override
   _i6.PageBuilder get pageBuilder => (super.noSuchMethod(
           Invocation.getter(#pageBuilder),
           returnValue: (_i6.RouteData data) => _FakeAutoRoutePage_4<dynamic>())
       as _i6.PageBuilder);
   @override
-  _i4.RouteMatcher get matcher =>
+  _i5.RouteMatcher get matcher =>
       (super.noSuchMethod(Invocation.getter(#matcher),
-          returnValue: _FakeRouteMatcher_5()) as _i4.RouteMatcher);
+          returnValue: _FakeRouteMatcher_5()) as _i5.RouteMatcher);
   @override
   bool get canPopSelfOrChildren =>
       (super.noSuchMethod(Invocation.getter(#canPopSelfOrChildren),
@@ -105,10 +105,10 @@ class MockStackRouter extends _i1.Mock implements _i6.StackRouter {
       (super.noSuchMethod(Invocation.getter(#hasPagelessTopRoute),
           returnValue: false) as bool);
   @override
-  List<_i5.AutoRoutePage<dynamic>> get stack =>
+  List<_i6.AutoRoutePage<dynamic>> get stack =>
       (super.noSuchMethod(Invocation.getter(#stack),
-              returnValue: <_i5.AutoRoutePage<dynamic>>[])
-          as List<_i5.AutoRoutePage<dynamic>>);
+              returnValue: <_i6.AutoRoutePage<dynamic>>[])
+          as List<_i6.AutoRoutePage<dynamic>>);
   @override
   bool get hasEntries =>
       (super.noSuchMethod(Invocation.getter(#hasEntries), returnValue: false)
@@ -166,8 +166,8 @@ class MockStackRouter extends _i1.Mock implements _i6.StackRouter {
   void dispose() => super.noSuchMethod(Invocation.method(#dispose, []),
       returnValueForMissingStub: null);
   @override
-  _i7.Future<T?> pushWidget<T extends Object?>(_i2.Widget? widget,
-          {_i2.RouteTransitionsBuilder? transitionBuilder,
+  _i7.Future<T?> pushWidget<T extends Object?>(_i4.Widget? widget,
+          {_i4.RouteTransitionsBuilder? transitionBuilder,
           bool? fullscreenDialog = false,
           Duration? transitionDuration = const Duration(milliseconds: 300)}) =>
       (super.noSuchMethod(
@@ -180,7 +180,7 @@ class MockStackRouter extends _i1.Mock implements _i6.StackRouter {
           }),
           returnValue: Future<T?>.value()) as _i7.Future<T?>);
   @override
-  _i7.Future<T?> pushNativeRoute<T extends Object?>(_i2.Route<T>? route) =>
+  _i7.Future<T?> pushNativeRoute<T extends Object?>(_i4.Route<T>? route) =>
       (super.noSuchMethod(Invocation.method(#pushNativeRoute, [route]),
           returnValue: Future<T?>.value()) as _i7.Future<T?>);
   @override
@@ -255,7 +255,7 @@ class MockStackRouter extends _i1.Mock implements _i6.StackRouter {
       (super.noSuchMethod(Invocation.method(#removeUntil, [predicate]),
           returnValue: false) as bool);
   @override
-  void popUntil(_i2.RoutePredicate? predicate) =>
+  void popUntil(_i4.RoutePredicate? predicate) =>
       super.noSuchMethod(Invocation.method(#popUntil, [predicate]),
           returnValueForMissingStub: null);
   @override
@@ -276,7 +276,7 @@ class MockStackRouter extends _i1.Mock implements _i6.StackRouter {
   @override
   _i7.Future<T?> pushAndPopUntil<T extends Object?>(
           _i8.PageRouteInfo<dynamic>? route,
-          {_i2.RoutePredicate? predicate,
+          {_i4.RoutePredicate? predicate,
           _i9.OnNavigationFailure? onFailure}) =>
       (super.noSuchMethod(
           Invocation.method(#pushAndPopUntil, [route],

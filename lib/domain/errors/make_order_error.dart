@@ -1,0 +1,1 @@
+class MakeOrderError implements Exception {}
