@@ -5,5 +5,6 @@ export 'load_products_error.dart';
 export 'load_user_account_error.dart';
 export 'load_user_cart_error.dart';
 export 'make_order_error.dart';
+export 'make_order_receipt_error.dart';
 export 'save_user_account_error.dart';
 export 'save_user_cart_error.dart';

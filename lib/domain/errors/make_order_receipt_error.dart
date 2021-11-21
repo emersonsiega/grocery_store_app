@@ -1,0 +1,1 @@
+class MakeOrderReceiptError implements Exception {}
