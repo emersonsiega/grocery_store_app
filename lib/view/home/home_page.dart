@@ -95,7 +95,10 @@ class _HomePageState extends State<HomePage> {
                   centerTitle: false,
                   // collapseMode: CollapseMode.none,
                   title: Padding(
-                    padding: EdgeInsets.only(bottom: 8.height),
+                    padding: EdgeInsets.only(
+                      left: 12.width,
+                      bottom: 8.height,
+                    ),
                     child: Text(
                       "Produtos",
                       style: context.textTheme.headline6,
