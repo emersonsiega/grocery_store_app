@@ -3,6 +3,7 @@ import 'package:get_it/get_it.dart';
 import 'package:responsive_ui_layout/responsive_ui_layout.dart';
 
 import '../view.dart';
+import '../../utils/utils.dart';
 import '../../domain/domain.dart';
 
 class ProductListTile extends StatelessWidget {
