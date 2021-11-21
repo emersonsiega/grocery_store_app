@@ -43,10 +43,6 @@ class CartEntity extends BaseEntity {
     return existentItem.isNotEmpty;
   }
 
-  int _itemIndex(CartItemEntity item) {
-    return items.indexWhere((cartItem) => cartItem.id == item.id);
-  }
-
   List<CartItemEntity>? addItem(CartItemEntity item) {
     if (_containsItem(item)) {
       throw CartItemAlreadyExistsError();
@@ -55,13 +51,12 @@ class CartEntity extends BaseEntity {
     return [...items, item];
   }
 
-  void editItem(CartItemEntity item) {
+  List<CartItemEntity>? editItem(CartItemEntity item) {
     if (!_containsItem(item)) {
       throw CartItemDoesntExistsError();
     }
 
-    int currentIndex = _itemIndex(item);
-    items.replaceRange(currentIndex, currentIndex + 1, [item]);
+    return items.map((i) => i.id == item.id ? item : i).toList();
   }
 
   List<CartItemEntity>? removeItem(CartItemEntity item) {

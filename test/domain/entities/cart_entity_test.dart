@@ -74,9 +74,9 @@ void main() {
     expect(sut.totalItems, 1);
     expect(sut.total, 1.00);
 
-    sut.editItem(item.copyWith(quantity: 2));
-    expect(sut.totalItems, 1);
-    expect(sut.total, 2.00);
+    final newItems = sut.editItem(item.copyWith(quantity: 2));
+    expect(newItems!.length, 1);
+    expect(newItems[0].total, 2.00);
   });
 
   test('Should edit an existent item at the same position', () async {
@@ -91,10 +91,10 @@ void main() {
     expect(sut.items[1], itemAtPosition1);
 
     final changedItemAtPosition1 = itemAtPosition1.copyWith(quantity: 2);
-    sut.editItem(changedItemAtPosition1);
+    final newItems = sut.editItem(changedItemAtPosition1);
 
-    expect(sut.totalItems, 3);
-    expect(sut.items[1], changedItemAtPosition1);
+    expect(newItems!.length, 3);
+    expect(newItems[1], changedItemAtPosition1);
   });
 
   test('Should throw a CartItemDoesntExistsError if edit an inexistent item',

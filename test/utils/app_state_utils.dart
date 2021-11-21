@@ -38,7 +38,7 @@ AppState makeAppStateWithCart() {
       id: user.id,
       user: user,
       items: [
-        makeCartItem(product: products.first),
+        makeCartItem(product: products.first, quantity: 2),
       ],
     ),
   );
