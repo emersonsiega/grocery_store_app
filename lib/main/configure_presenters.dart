@@ -34,4 +34,11 @@ void injectPresenters() {
       makeUserOrder: GetIt.I.get(),
     ),
   );
+
+  GetIt.I.registerFactory<UserAccountPresenter>(
+    () => CubitUserAccountPresenter(
+      loadUserOrders: GetIt.I.get(),
+      pdfMaker: GetIt.I.get(),
+    ),
+  );
 }

@@ -6,6 +6,7 @@ import 'package:responsive_ui_layout/responsive_ui_layout.dart';
 import '../view.dart';
 import 'option_menu_list_tile.dart';
 import 'user_image.dart';
+import 'user_orders_bottom_sheet.dart';
 
 class UserAccountPage extends StatefulWidget {
   const UserAccountPage({Key? key}) : super(key: key);
@@ -72,8 +73,22 @@ class _UserAccountPageState extends State<UserAccountPage> {
     );
   }
 
-  void showOrders() {
-    //
+  void showOrders() async {
+    await showModalBottomSheet(
+      context: context,
+      isDismissible: true,
+      useRootNavigator: true,
+      isScrollControlled: false,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+      ),
+      builder: (context) {
+        return const UserOrdersBottomSheet();
+      },
+    );
   }
 
   void doNothing() {}
