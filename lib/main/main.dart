@@ -1,3 +1,5 @@
+import 'package:intl/date_symbol_data_local.dart';
+
 import 'configure_data.dart';
 import 'configure_infra.dart';
 import 'configure_presenters.dart';
@@ -13,4 +15,6 @@ Future<void> configureApp() async {
   injectPresenters();
 
   await createProductsList();
+
+  await initializeDateFormatting('pt_BR', null);
 }

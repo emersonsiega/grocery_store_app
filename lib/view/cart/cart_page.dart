@@ -57,7 +57,7 @@ class _CartPageState extends State<CartPage> {
             return Center(
               child: Text(
                 "Seu carrinho está vazio...",
-                style: context.textTheme.headline5?.copyWith(
+                style: context.textTheme.headline6?.copyWith(
                   color: context.theme.dividerColor,
                 ),
               ),

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:responsive_ui_layout/responsive_ui_layout.dart';
 
@@ -220,6 +221,7 @@ class _ProductFilterState extends State<ProductFilter> {
     return TextFormField(
       controller: controller,
       onChanged: onSearch,
+      textInputAction: TextInputAction.search,
       decoration: InputDecoration(
         hintText: "Pesquisar",
         prefixIcon: Icon(
