@@ -5,14 +5,27 @@ import '../domain.dart';
 
 class LocalMakeOrder implements MakeOrder {
   final CacheStorage cacheStorage;
-  static const _makeOrderKey = "order_user_";
+  static const _makeOrderKey = "user_orders_";
 
   LocalMakeOrder({required this.cacheStorage});
 
   @override
   Future<void> save(OrderEntity order) async {
     try {
-      final json = OrderModel.fromEntity(order).toJson();
+      final newOrderModel = OrderModel.fromEntity(order);
+
+      final orders = await cacheStorage.fetch("$_makeOrderKey${order.user.id}");
+
+      List<OrderModel> userOrders = [];
+      if (orders != null) {
+        userOrders = List<Map<String, dynamic>>.from(orders)
+            .map((item) => OrderModel.fromJson(item))
+            .toList();
+      }
+
+      userOrders.add(newOrderModel);
+
+      final json = userOrders.map((e) => e.toJson()).toList();
 
       await cacheStorage.save(
         key: "$_makeOrderKey${order.user.id}",
