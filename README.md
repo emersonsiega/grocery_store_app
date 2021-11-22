@@ -23,7 +23,7 @@ Busquei algumas referências no Behance e [criei um protótipo no Figma](https:/
 ### Arquitetura
 
 Projeto desenvolvido seguindo a Clean Architecture.
-Especificação macro de algums dos principais módulos:  
+Especificação macro de alguns dos principais módulos:  
 
 ![](./architecture.png)
 
