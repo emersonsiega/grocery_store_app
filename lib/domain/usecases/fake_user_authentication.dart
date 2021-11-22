@@ -11,7 +11,7 @@ class FakeUserAuthentication implements UserAuthentication {
     }
 
     return UserEntity(
-      name: username,
+      name: "Emerson Siega",
       cpf: '08685493048',
       mainAddress: AddressEntity(
         title: "Apartamento",

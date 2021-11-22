@@ -35,7 +35,7 @@ void main() {
       password: password,
     );
 
-    expect(response.name, username);
+    expect(response.name, isNotNull);
     expect(response.mainAddress, isNotNull);
   });
 
