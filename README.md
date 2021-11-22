@@ -8,8 +8,9 @@ App estilo e-commerce para compra de frutas. Principais informações:
 - Desenvolvido em sua maioria com TDD
     - Na Splash e User Account não houve tempo hábil
 - Controle de navegação com AutoRoute
-- Injeção de dependências com GetIt.
+- Injeção de dependências com GetIt
 - Testes com Mockito e Faker
+- Criação de PDF para comprovante do pedido
 
 
 ### Protótipo
@@ -36,3 +37,10 @@ Overall coverage rate:
 ```
 
 ![](./coverage.png)
+
+
+### PDF
+
+Exemplo de arquivo gerado na finalização de um pedido:  
+
+![](./order-example.jpg)
