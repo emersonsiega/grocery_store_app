@@ -34,4 +34,8 @@ void injectUseCases() {
   GetIt.I.registerLazySingleton<MakeOrderReceipt>(
     () => LocalMakeOrderReceipt(pdfMaker: GetIt.I.get()),
   );
+
+  GetIt.I.registerLazySingleton<LoadUserOrders>(
+    () => LocalLoadUserOrders(cacheStorage: GetIt.I.get()),
+  );
 }

@@ -1,0 +1,1 @@
+class LoadUserOrdersError implements Exception {}
