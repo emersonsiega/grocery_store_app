@@ -105,10 +105,11 @@ class CubitCartPresenter extends Cubit<CartState> implements CartPresenter {
       await saveUserCart.save(emptyCart);
       appPresenter.updateCart(emptyCart);
 
+      await pdfMaker.printPdf(pdfPath);
+
       emit(
-        CartState(
+        const CartState(
           isLoading: false,
-          orderReceiptPath: pdfPath,
           successMessage: 'Pedido realizado com sucesso',
         ),
       );

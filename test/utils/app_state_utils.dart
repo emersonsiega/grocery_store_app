@@ -50,3 +50,21 @@ AppState makeAppStateWithoutCart() {
     products: _stateProducts,
   );
 }
+
+AppState makeAppStateWithTwoCartItems() {
+  final user = makeUserEntity();
+  final products = _stateProducts;
+
+  return AppState(
+    currentUser: user,
+    products: products,
+    cart: CartEntity(
+      id: user.id,
+      user: user,
+      items: [
+        makeCartItem(product: products.first, quantity: 2, price: 1.0),
+        makeCartItem(product: products[1], quantity: 3, price: 1.5),
+      ],
+    ),
+  );
+}

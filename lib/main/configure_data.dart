@@ -2,6 +2,13 @@ import 'package:get_it/get_it.dart';
 import 'package:uuid/uuid.dart';
 
 import '../data/cache/cache.dart';
+import '../data/pdf_maker/pdf_maker.dart';
+
+void injectData() {
+  GetIt.I.registerLazySingleton<OrderReceiptPdfMaker>(
+    () => LocalOrderReceiptPdfMaker(),
+  );
+}
 
 Future<void> createProductsList() async {
   const key = 'product_list';

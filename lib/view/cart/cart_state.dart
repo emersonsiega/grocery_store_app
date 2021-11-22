@@ -8,13 +8,11 @@ class CartState extends Equatable {
   final bool isLoading;
   final String? errorMessage;
   final String? successMessage;
-  final String? orderReceiptPath;
 
   const CartState({
     this.isLoading = false,
     this.errorMessage,
     this.successMessage,
-    this.orderReceiptPath,
   });
 
   @override
@@ -22,6 +20,5 @@ class CartState extends Equatable {
         isLoading,
         errorMessage,
         successMessage,
-        orderReceiptPath,
       ];
 }

@@ -6,6 +6,8 @@ import 'configure_usecases.dart';
 Future<void> configureApp() async {
   await injectInfra();
 
+  injectData();
+
   injectUseCases();
 
   injectPresenters();

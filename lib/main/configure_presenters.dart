@@ -25,4 +25,13 @@ void injectPresenters() {
       saveUserCart: GetIt.I.get(),
     ),
   );
+
+  GetIt.I.registerLazySingleton<CartPresenter>(
+    () => CubitCartPresenter(
+      appPresenter: GetIt.I.get(),
+      saveUserCart: GetIt.I.get(),
+      pdfMaker: GetIt.I.get(),
+      makeUserOrder: GetIt.I.get(),
+    ),
+  );
 }

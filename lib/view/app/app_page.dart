@@ -27,6 +27,7 @@ class _AppPageState extends State<AppPage> {
   @override
   Widget build(BuildContext context) {
     return AutoTabsScaffold(
+      lazyLoad: false,
       routes: const [
         HomeRoute(),
         CartRoute(),

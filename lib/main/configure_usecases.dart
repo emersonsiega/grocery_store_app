@@ -26,4 +26,12 @@ void injectUseCases() {
   GetIt.I.registerLazySingleton<SaveUserCart>(
     () => LocalSaveUserCart(cacheStorage: GetIt.I.get()),
   );
+
+  GetIt.I.registerLazySingleton<MakeOrder>(
+    () => LocalMakeOrder(cacheStorage: GetIt.I.get()),
+  );
+
+  GetIt.I.registerLazySingleton<MakeOrderReceipt>(
+    () => LocalMakeOrderReceipt(pdfMaker: GetIt.I.get()),
+  );
 }

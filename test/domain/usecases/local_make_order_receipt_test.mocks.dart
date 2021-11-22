@@ -32,5 +32,10 @@ class MockOrderReceiptPdfMaker extends _i1.Mock
       (super.noSuchMethod(Invocation.method(#makePdf, [order]),
           returnValue: Future<String>.value('')) as _i3.Future<String>);
   @override
+  _i3.Future<void> printPdf(String? path) =>
+      (super.noSuchMethod(Invocation.method(#printPdf, [path]),
+          returnValue: Future<void>.value(),
+          returnValueForMissingStub: Future<void>.value()) as _i3.Future<void>);
+  @override
   String toString() => super.toString();
 }

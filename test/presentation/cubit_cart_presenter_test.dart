@@ -206,9 +206,8 @@ void main() {
       sut.stream,
       emitsInOrder([
         const CartState(isLoading: true),
-        CartState(
+        const CartState(
           isLoading: false,
-          orderReceiptPath: pdfPath,
           successMessage: 'Pedido realizado com sucesso',
         ),
       ]),
@@ -218,6 +217,7 @@ void main() {
 
     verify(makeOrderSpy.save(any)).called(1);
     verify(pdfMakerSpy.makePdf(any)).called(1);
+    verify(pdfMakerSpy.printPdf(any)).called(1);
     verify(saveUserCartSpy.save(any)).called(1);
     verify(appPresenterSpy.updateCart(any)).called(1);
   });

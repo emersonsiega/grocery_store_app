@@ -36,6 +36,11 @@ abstract class AppTheme {
           ),
         ),
         textTheme: GoogleFonts.interTextTheme().copyWith(
+          headline5: GoogleFonts.inter(
+            color: AppColors.text,
+            fontSize: 24.fontSize,
+            fontWeight: FontWeight.w500,
+          ),
           headline6: GoogleFonts.inter(
             color: AppColors.text,
             fontSize: 20.fontSize,

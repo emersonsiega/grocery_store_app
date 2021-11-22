@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
+import 'package:printing/printing.dart';
 
 import '../../domain/domain.dart';
 import '../../utils/utils.dart';
@@ -269,5 +270,15 @@ class LocalOrderReceiptPdfMaker implements OrderReceiptPdfMaker {
     final file = File('${output.path}/order-receipt-${order.id}.pdf');
     await file.writeAsBytes(pdfData);
     return file.path;
+  }
+
+  @override
+  Future<void> printPdf(String path) async {
+    File file = File(path);
+    final fileContent = await file.readAsBytes();
+    await Printing.layoutPdf(
+      onLayout: (_) => fileContent,
+      name: path.split('/').last,
+    );
   }
 }
