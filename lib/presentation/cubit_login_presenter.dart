@@ -6,6 +6,8 @@ import '../view/view.dart';
 class CubitLoginPresenter extends Cubit<LoginState> implements LoginPresenter {
   final UserAuthentication userAuthentication;
   final SaveUserAccount saveUserAccount;
+  final AppPresenter appPresenter;
+
   static const _invalidCredentialsMessage = "Usuário ou senha inválidos";
   static const _userAccountErrorMessage =
       "Não foi possível completar login... Tente novamente";
@@ -13,6 +15,7 @@ class CubitLoginPresenter extends Cubit<LoginState> implements LoginPresenter {
   CubitLoginPresenter({
     required this.userAuthentication,
     required this.saveUserAccount,
+    required this.appPresenter,
   }) : super(const LoginState());
 
   @override
@@ -29,6 +32,7 @@ class CubitLoginPresenter extends Cubit<LoginState> implements LoginPresenter {
       );
 
       await saveUserAccount.save(entity);
+      await appPresenter.loadAppState();
 
       emit(const LoginState(completed: true));
     } on InvalidCredentialsError {

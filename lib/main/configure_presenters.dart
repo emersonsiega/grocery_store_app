@@ -16,6 +16,7 @@ void injectPresenters() {
     () => CubitLoginPresenter(
       saveUserAccount: GetIt.I.get(),
       userAuthentication: GetIt.I.get(),
+      appPresenter: GetIt.I.get(),
     ),
   );
 

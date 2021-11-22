@@ -9,11 +9,12 @@ import 'package:mockito/mockito.dart';
 import '../utils/utils.dart';
 import 'cubit_login_presenter_test.mocks.dart';
 
-@GenerateMocks([UserAuthentication, SaveUserAccount])
+@GenerateMocks([UserAuthentication, SaveUserAccount, AppPresenter])
 void main() {
   late CubitLoginPresenter sut;
   late MockUserAuthentication userAuthenticationSpy;
   late MockSaveUserAccount saveUserAccountSpy;
+  late MockAppPresenter appPresenterSpy;
   late String username;
   late String password;
   late UserEntity userEntity;
@@ -37,9 +38,12 @@ void main() {
   setUp(() {
     userAuthenticationSpy = MockUserAuthentication();
     saveUserAccountSpy = MockSaveUserAccount();
+    appPresenterSpy = MockAppPresenter();
+
     sut = CubitLoginPresenter(
       userAuthentication: userAuthenticationSpy,
       saveUserAccount: saveUserAccountSpy,
+      appPresenter: appPresenterSpy,
     );
 
     username = faker.internet.userName();
@@ -60,6 +64,7 @@ void main() {
     );
 
     await sut.authenticate(user: username, password: password);
+    verify(appPresenterSpy.loadAppState()).called(1);
   });
 
   test('Should call to UserAuthentication with correct values when submit',
