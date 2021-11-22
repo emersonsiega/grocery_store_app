@@ -9,7 +9,8 @@ part 'app_router.gr.dart';
   replaceInRouteName: 'Page,Route',
   preferRelativeImports: true,
   routes: <AutoRoute>[
-    AutoRoute(page: LoginPage, initial: true),
+    AutoRoute(page: SplashPage, initial: true),
+    AutoRoute(page: LoginPage),
     AutoRoute(
       page: AppPage,
       children: [

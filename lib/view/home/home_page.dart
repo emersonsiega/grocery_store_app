@@ -57,7 +57,7 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: StreamBuilder<AppState>(
         stream: appPresenter.stream,
-        initialData: const AppState(),
+        initialData: appPresenter.state,
         builder: (context, snapshot) {
           final state = snapshot.data!;
 
@@ -93,7 +93,6 @@ class _HomePageState extends State<HomePage> {
                     ),
                   ),
                   centerTitle: false,
-                  // collapseMode: CollapseMode.none,
                   title: Padding(
                     padding: EdgeInsets.only(
                       left: 12.width,

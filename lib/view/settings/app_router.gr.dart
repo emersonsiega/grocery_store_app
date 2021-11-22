@@ -15,6 +15,10 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   final Map<String, PageFactory> pagesMap = {
+    SplashRoute.name: (routeData) {
+      return AdaptivePage<dynamic>(
+          routeData: routeData, child: const SplashPage());
+    },
     LoginRoute.name: (routeData) {
       return AdaptivePage<dynamic>(
           routeData: routeData, child: const LoginPage());
@@ -39,7 +43,8 @@ class _$AppRouter extends RootStackRouter {
 
   @override
   List<RouteConfig> get routes => [
-        RouteConfig(LoginRoute.name, path: '/'),
+        RouteConfig(SplashRoute.name, path: '/'),
+        RouteConfig(LoginRoute.name, path: '/login-page'),
         RouteConfig(AppRoute.name, path: '/app-page', children: [
           RouteConfig(HomeRoute.name, path: '', parent: AppRoute.name),
           RouteConfig(CartRoute.name, path: 'cart-page', parent: AppRoute.name),
@@ -49,9 +54,16 @@ class _$AppRouter extends RootStackRouter {
       ];
 }
 
+/// generated route for [SplashPage]
+class SplashRoute extends PageRouteInfo<void> {
+  const SplashRoute() : super(name, path: '/');
+
+  static const String name = 'SplashRoute';
+}
+
 /// generated route for [LoginPage]
 class LoginRoute extends PageRouteInfo<void> {
-  const LoginRoute() : super(name, path: '/');
+  const LoginRoute() : super(name, path: '/login-page');
 
   static const String name = 'LoginRoute';
 }

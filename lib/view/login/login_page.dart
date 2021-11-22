@@ -73,23 +73,7 @@ class _LoginPageState extends State<LoginPage> {
       body: ListView(
         padding: EdgeInsets.zero,
         children: [
-          Stack(
-            alignment: Alignment.bottomCenter,
-            children: [
-              Image.asset(
-                AppImages.loginBackground,
-                alignment: Alignment.topCenter,
-                fit: BoxFit.fitWidth,
-                width: 414.width,
-              ),
-              Text(
-                "Grocery Store",
-                style: context.theme.primaryTextTheme.headline3?.copyWith(
-                  color: context.colorScheme.secondary,
-                ),
-              ),
-            ],
-          ),
+          const AppTitleHeader(),
           StreamBuilder<LoginState>(
             stream: presenter.stream,
             initialData: const LoginState(),

@@ -21,9 +21,6 @@ class _AppPageState extends State<AppPage> {
     super.initState();
 
     presenter = GetIt.I.get();
-
-    WidgetsBinding.instance
-        ?.addPostFrameCallback((_) => presenter.loadAppState());
   }
 
   @override
@@ -78,7 +75,7 @@ class _AppPageState extends State<AppPage> {
               ),
               child: StreamBuilder<AppState>(
                   stream: presenter.stream,
-                  initialData: const AppState(),
+                  initialData: presenter.state,
                   builder: (context, snapshot) {
                     return BottomNavigationBar(
                       currentIndex: tabsRouter.activeIndex,

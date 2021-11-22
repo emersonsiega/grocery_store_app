@@ -32,6 +32,7 @@ void main() {
     appPresenterSpy = MockAppPresenter();
     appController = StreamController.broadcast(sync: true);
     when(appPresenterSpy.stream).thenAnswer((_) => appController.stream);
+    when(appPresenterSpy.state).thenAnswer((_) => initialAppState);
 
     GetIt.I.registerFactory<AppPresenter>(() => appPresenterSpy);
   }
@@ -48,10 +49,10 @@ void main() {
   setUp(() async {
     await GetIt.I.reset();
 
+    initialAppState = makeAppStateWithEmptyCart();
+
     setUpAppPresenter();
     setUpHomePresenter();
-
-    initialAppState = makeAppStateWithEmptyCart();
   });
 
   Future<void> _loadPage(tester) async {

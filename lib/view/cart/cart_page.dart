@@ -50,7 +50,7 @@ class _CartPageState extends State<CartPage> {
     return SafeArea(
       child: StreamBuilder<AppState>(
         stream: appPresenter.stream,
-        initialData: const AppState(),
+        initialData: appPresenter.state,
         builder: (context, snapshot) {
           if (snapshot.data?.cart == null ||
               snapshot.data!.cart!.items.isEmpty) {

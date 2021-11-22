@@ -5,5 +5,6 @@ export 'components/components.dart';
 export 'home/home.dart';
 export 'login/login.dart';
 export 'settings/settings.dart';
+export 'splash/splash.dart';
 export 'user_account/user_account.dart';
 export 'validations/validations.dart';
